@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FixIT Support | แจ้งซ่อม IT</title>
+    <meta
+      name="description"
+      content="Landing page สำหรับเว็บแจ้งซ่อม IT Support โทนสีเหลือง-ขาว"
+    />
+    <style>
+      :root {
+        --yellow-50: #fffdf0;
+        --yellow-100: #fff6cc;
+        --yellow-200: #ffe98a;
+        --yellow-300: #ffd95c;
+        --yellow-400: #f7c948;
+        --yellow-500: #eebf2b;
+        --yellow-600: #d8a40d;
+        --gray-900: #1e1e1e;
+        --gray-800: #2b2b2b;
+        --gray-700: #555555;
+        --gray-500: #8a8a8a;
+        --gray-200: #ebebeb;
+        --white: #ffffff;
+        --shadow: 0 12px 30px rgba(27, 27, 27, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(180deg, var(--yellow-50) 0%, #fff 28%, #fffdf7 100%);
+        color: var(--gray-900);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        font-size: 1.3rem;
+      }
+
+      .logo-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--yellow-300), var(--yellow-500));
+        display: grid;
+        place-items: center;
+        box-shadow: var(--shadow);
+        font-size: 1.25rem;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--gray-700);
+        font-weight: 600;
+      }
+
+      .nav-links a:hover {
+        color: var(--gray-900);
+      }
+
+      .nav-cta {
+        background: var(--gray-900);
+        color: var(--white);
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero {
+        padding: 52px 0 28px;
+      }
+
+      .hero-wrap {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--yellow-100);
+        color: var(--gray-800);
+        border: 1px solid rgba(231, 180, 24, 0.18);
+        padding: 10px 16px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .badge::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #45c77d;
+      }
+
+      h1 {
+        margin: 18px 0 18px;
+        font-size: clamp(2.5rem, 4vw, 4.25rem);
+        line-height: 1.08;
+        letter-spacing: -0.06em;
+      }
+
+      .hero-copy p {
+        margin: 0;
+        color: var(--gray-700);
+        font-size: 1.08rem;
+        line-height: 1.8;
+        max-width: 610px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 24px;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        font-weight: 800;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--yellow-300), var(--yellow-500));
+        color: var(--gray-900);
+        box-shadow: 0 10px 22px rgba(247, 201, 73, 0.4);
+      }
+
+      .btn-secondary {
+        background: var(--white);
+        border: 1px solid var(--gray-200);
+        color: var(--gray-900);
+      }
+
+      .stats {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .stat {
+        min-width: 140px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.8rem;
+        color: var(--gray-900);
+      }
+
+      .stat span {
+        color: var(--gray-700);
+        font-size: 0.95rem;
+      }
+
+      .hero-card {
+        background: linear-gradient(180deg, #fffef7, #fff8d9);
+        border: 1px solid rgba(246, 196, 44, 0.45);
+        border-radius: 28px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .mini-panel {
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 22px;
+        padding: 18px;
+      }
+
+      .mini-panel + .mini-panel {
+        margin-top: 14px;
+      }
+
+      .status-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .title-box {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--gray-700);
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 78px;
+        padding: 7px 10px;
+        background: #eafbe9;
+        color: #2b8a4e;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        font-weight: 800;
+      }
+
+      .ticket-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .ticket-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: var(--yellow-50);
+        border: 1px solid rgba(247, 201, 73, 0.18);
+      }
+
+      .ticket-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .ticket-meta strong {
+        font-size: 0.96rem;
+      }
+
+      .ticket-meta span {
+        font-size: 0.78rem;
+        color: var(--gray-700);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--yellow-500);
+        box-shadow: 0 0 0 5px rgba(247, 201, 73, 0.2);
+      }
+
+      .section {
+        padding: 36px 0;
+      }
+
+      .section-head {
+        text-align: center;
+        margin-bottom: 26px;
+      }
+
+      .section-head span {
+        color: var(--yellow-600);
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-size: 0.77rem;
+      }
+
+      .section-head h2 {
+        margin: 10px 0 0;
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.05em;
+      }
+
+      .feature-grid,
+      .category-grid,
+      .support-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: 0 12px 25px rgba(41, 41, 41, 0.03);
+      }
+
+      .icon-box {
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--yellow-100), var(--yellow-200));
+        display: grid;
+        place-items: center;
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 1.35rem;
+      }
+
+      .card p {
+        margin: 0;
+        line-height: 1.7;
+        color: var(--gray-700);
+      }
+
+      .process {
+        background: linear-gradient(180deg, #fffefb 0%, #fff9de 100%);
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .step {
+        position: relative;
+        background: var(--white);
+        border-radius: 22px;
+        border: 1px solid rgba(247, 201, 73, 0.2);
+        padding: 24px 20px;
+      }
+
+      .step-number {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: var(--yellow-300);
+        color: var(--gray-900);
+        font-weight: 800;
+        margin-bottom: 18px;
+      }
+
+      .step h4 {
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--gray-700);
+        line-height: 1.7;
+      }
+
+      .form-wrap {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 26px;
+        align-items: start;
+      }
+
+      .info-box {
+        background: linear-gradient(135deg, #fffefc 0%, #fff5c8 100%);
+        border: 1px solid rgba(247, 201, 73, 0.25);
+        border-radius: 24px;
+        padding: 28px;
+      }
+
+      .info-box h3 {
+        margin-top: 0;
+        font-size: 2rem;
+        letter-spacing: -0.04em;
+      }
+
+      .list {
+        display: grid;
+        gap: 16px;
+        margin-top: 26px;
+      }
+
+      .list-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .check {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--yellow-200);
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        color: var(--gray-900);
+      }
+
+      .list-item p {
+        margin: 0;
+        color: var(--gray-700);
+        line-height: 1.7;
+      }
+
+      .report-form {
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 24px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      form {
+        display: grid;
+        gap: 18px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      label {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--gray-800);
+        margin-bottom: 8px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--gray-200);
+        border-radius: 14px;
+        background: #fffdf9;
+        padding: 14px 15px;
+        font: inherit;
+        color: var(--gray-900);
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid rgba(247, 201, 73, 0.32);
+        border-color: rgba(247, 201, 73, 0.7);
+      }
+
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+
+      .form-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .small-note {
+        color: var(--gray-700);
+        font-size: 0.82rem;
+      }
+
+      .support-grid {
+        margin-top: 18px;
+      }
+
+      .support-box {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 20px;
+        padding: 18px 20px;
+      }
+
+      .support-box .icon-box {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+      }
+
+      .support-box strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .support-box span {
+        color: var(--gray-700);
+        font-size: 0.9rem;
+      }
+
+      .cta {
+        background: linear-gradient(135deg, #1f1f1f 0%, #363636 100%);
+        color: var(--white);
+        padding: 28px 0 44px;
+      }
+
+      .cta-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 26px;
+        padding: 24px 28px;
+      }
+
+      .cta-box h3 {
+        margin: 0 0 8px;
+        font-size: clamp(1.6rem, 2vw, 2.4rem);
+      }
+
+      .cta-box p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      footer {
+        background: #fffdf4;
+        border-top: 1px solid rgba(0, 0, 0, 0.04);
+        color: var(--gray-700);
+      }
+
+      .footer-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 78px;
+      }
+
+      @media (max-width: 980px) {
+        .hero-wrap,
+        .form-wrap,
+        .feature-grid,
+        .category-grid,
+        .support-grid,
+        .process-steps {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .nav-links {
+          display: none;
+        }
+
+        .feature-grid,
+        .category-grid,
+        .support-grid,
+        .process-steps,
+        .form-row,
+        .cta-box,
+        .footer-wrap {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .cta-box,
+        .footer-wrap {
+          text-align: center;
+        }
+
+        .actions,
+        .stats {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn,
+        .nav-cta {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a href="#top" class="logo" aria-label="FixIT Home">
+          <span class="logo-mark">IT</span>
+          <span>FixIT Support</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#features">บริการ</a>
+          <a href="#process">กระบวนการ</a>
+          <a href="#report">แจ้งซ่อม</a>
+          <a href="#contact">ติดต่อ</a>
+        </nav>
+
+        <a href="#report" class="nav-cta">แจ้งปัญหา</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-wrap">
+          <div class="hero-copy">
+            <div class="badge">พร้อมให้บริการ 24/7</div>
+            <h1>แจ้งซ่อม IT ให้เร็ว<br />และปลอดภัย</h1>
+            <p>
+              ระบบช่วยเหลือด้านไอทีสำหรับอุปกรณ์ คอมพิวเตอร์ เครือข่าย และซอฟต์แวร์
+              ให้ทีม IT รับเรื่องได้อย่างรวดเร็ว พร้อมติดตามสถานะแบบเรียลไทม์
+              เพื่อให้พนักงานกลับมาทำงานได้ทันที
+            </p>
+
+            <div class="actions">
+              <a href="#report" class="btn btn-primary">แจ้งซ่อมทันที</a>
+              <a href="#process" class="btn btn-secondary">ดูขั้นตอน</a>
+            </div>
+
+            <div class="stats" aria-label="Performance stats">
+              <div class="stat">
+                <strong>2,500+</strong>
+                <span>เคสสำเร็จ</span>
+              </div>
+              <div class="stat">
+                <strong>15 นาที</strong>
+                <span>เวลาเริ่มตอบรับ</span>
+              </div>
+              <div class="stat">
+                <strong>99.8%</strong>
+                <span>ความพึงพอใจ</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="IT support status panel">
+            <div class="mini-panel">
+              <div class="status-row">
+                <div class="title-box">ตารางการแจ้งซ่อม</div>
+                <span class="tag">กำลังดำเนินการ</span>
+              </div>
+
+              <div class="ticket-list">
+                <div class="ticket-item">
+                  <div class="ticket-meta">
+                    <strong>ลำดับ #IT-2148</strong>
+                    <span>เครื่องพิมพ์สำนักงาน</span>
+                  </div>
+                  <span class="dot" aria-label="In progress"></span>
+                </div>
+
+                <div class="ticket-item">
+                  <div class="ticket-meta">
+                    <strong>ลำดับ #IT-2149</strong>
+                    <span>โน้ตบุ๊กพนักงาน</span>
+                  </div>
+                  <span class="dot" aria-label="In progress"></span>
+                </div>
+
+                <div class="ticket-item">
+                  <div class="ticket-meta">
+                    <strong>ลำดับ #IT-2150</strong>
+                    <span>อุปกรณ์เครือข่าย</span>
+                  </div>
+                  <span class="dot" aria-label="In progress"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mini-panel">
+              <div class="status-row">
+                <div class="title-box">บริการที่ได้รับความนิยม</div>
+              </div>
+              <div class="ticket-list">
+                <div class="ticket-item">
+                  <div class="ticket-meta">
+                    <strong>ซ่อมเครื่องคอมพิวเตอร์</strong>
+                    <span>4,200 รายการ</span>
+                  </div>
+                  <strong>89%</strong>
+                </div>
+                <div class="ticket-item">
+                  <div class="ticket-meta">
+                    <strong>แก้ปัญหาเครือข่าย</strong>
+                    <span>1,860 รายการ</span>
+                  </div>
+                  <strong>72%</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-head">
+            <span>Why Choose Us</span>
+            <h2>บริการที่ตอบโจทย์การซ่อม IT</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="card">
+              <div class="icon-box">⚡</div>
+              <h3>รับเรื่องเร็ว</h3>
+              <p>
+                แจ้งปัญหาได้ทันทีผ่านเว็บไซต์ พร้อมระบบจัดคิวอัตโนมัติและส่งการแจ้งเตือนแบบ real-time ให้ทีม IT
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon-box">🛠️</div>
+              <h3>ทีมช่างมืออาชีพ</h3>
+              <p>
+                ผู้เชี่ยวชาญด้านฮาร์ดแวร์ ซอฟต์แวร์ เครือข่าย และอุปกรณ์สำนักงาน พร้อมมาตรฐานการให้บริการระดับองค์กร
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="icon-box">📊</div>
+              <h3>ติดตามสถานะ</h3>
+              <p>
+                ตรวจสอบความคืบหน้าและประวัติการซ่อมได้แบบเรียลไทม์ เพิ่มความมั่นใจและลดความล่าช้าในการแก้ไข
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process" id="process">
+        <div class="container">
+          <div class="section-head">
+            <span>Process</span>
+            <h2>กระบวนการแจ้งซ่อมที่ชัดเจน</h2>
+          </div>
+
+          <div class="process-steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h4>แจ้งปัญหา</h4>
+              <p>กรอกข้อมูลอุปกรณ์ ปัญหา และความเร่งด่วน เพื่อให้ทีม IT รับทราบทันที</p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h4>ประเมินเบื้องต้น</h4>
+              <p>ทีมงานตรวจสอบและจัดสรรความสำคัญตามระดับความรุนแรงและผลกระทบต่อการทำงาน</p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h4>ดำเนินการซ่อม</h4>
+              <p>ซ่อม แก้ไข หรือเปลี่ยนอะไหล่โดยทีมช่างที่ได้รับการอบรมและมีประสบการณ์</p>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <h4>ยืนยันเสร็จสิ้น</h4>
+              <p>ส่งรายงานผลให้ผู้แจ้งทราบ พร้อมตรวจสอบว่าระบบกลับมาทำงานปกติหรือไม่</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="report">
+        <div class="container form-wrap">
+          <div class="info-box">
+            <h3>ปัญหา IT ที่เราแก้ได้</h3>
+            <div class="list">
+              <div class="list-item">
+                <div class="check">✓</div>
+                <p>ระบบคอมพิวเตอร์ไม่เปิด / หน้าจอภาพไม่แสดง / อาการค้างหรือช้า</p>
+              </div>
+              <div class="list-item">
+                <div class="check">✓</div>
+                <p>ปัญหาเครือข่าย Wi-Fi LAN อุปกรณ์ไม่เชื่อมต่อ หรือการส่งข้อมูลช้า</p>
+              </div>
+              <div class="list-item">
+                <div class="check">✓</div>
+                <p>เครื่องพิมพ์ อุปกรณ์สำนักงาน และอุปกรณ์ต่อพ่วงไม่ทำงานตามปกติ</p>
+              </div>
+              <div class="list-item">
+                <div class="check">✓</div>
+                <p>ระบบซอฟต์แวร์ ลิขสิทธิ์ การตั้งค่า และการเข้าถึงแอปพลิเคชัน</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-form" aria-label="Report form">
+            <form>
+              <div class="form-row">
+                <div>
+                  <label for="name">ชื่อผู้แจ้ง</label>
+                  <input id="name" type="text" placeholder="กรอกชื่อ-นามสกุล" />
+                </div>
+                <div>
+                  <label for="department">แผนก/หน่วยงาน</label>
+                  <input id="department" type="text" placeholder="เช่น ฝ่ายไอที" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label for="device">ประเภทอุปกรณ์</label>
+                  <select id="device">
+                    <option>เลือกอุปกรณ์</option>
+                    <option>เครื่องคอมพิวเตอร์</option>
+                    <option>โน้ตบุ๊ก</option>
+                    <option>เครือข่าย</option>
+                    <option>เครื่องพิมพ์</option>
+                    <option>อุปกรณ์สำนักงาน</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="priority">ระดับความเร่งด่วน</label>
+                  <select id="priority">
+                    <option>เลือกระดับ</option>
+                    <option>ต่ำ</option>
+                    <option>ปานกลาง</option>
+                    <option>สูง</option>
+                    <option>เร่งด่วน</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="issue">รายละเอียดปัญหา</label>
+                <textarea id="issue" placeholder="อธิบายปัญหาและผลกระทบที่เกิดขึ้น"></textarea>
+              </div>
+
+              <div class="form-foot">
+                <span class="small-note">* ทีม IT จะแจ้งกลับภายใน 15 นาที</span>
+                <button class="btn btn-primary" type="button">ส่งเรื่องแจ้งซ่อม</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-head">
+            <span>Support Center</span>
+            <h2>ช่องทางติดต่อและการช่วยเหลือ</h2>
+          </div>
+
+          <div class="support-grid">
+            <div class="support-box">
+              <div class="icon-box">📞</div>
+              <div>
+                <strong>โทรศัพท์</strong>
+                <span>02-555-0147</span>
+              </div>
+            </div>
+
+            <div class="support-box">
+              <div class="icon-box">💬</div>
+              <div>
+                <strong>Line Support</strong>
+                <span>@fixitsupport</span>
+              </div>
+            </div>
+
+            <div class="support-box">
+              <div class="icon-box">✉️</div>
+              <div>
+                <strong>อีเมล</strong>
+                <span>helpdesk@fixit.co.th</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h3>พร้อมรับมือกับปัญหา IT ทุกประเภท</h3>
+            <p>ทีมผู้เชี่ยวชาญของเราให้ความช่วยเหลือได้ทุกเวลาที่คุณต้องการ</p>
+          </div>
+          <a href="#report" class="btn btn-primary">เริ่มแจ้งปัญหา</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-wrap">
+        <div class="logo">
+          <span class="logo-mark">IT</span>
+          <span>FixIT Support</span>
+        </div>
+        <span>© <span id="year"></span> FixIT Support. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
